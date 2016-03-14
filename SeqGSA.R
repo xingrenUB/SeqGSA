@@ -76,7 +76,7 @@ SeqGSA_func = function(x, y, z.func, genesets, len = 1, weighted = T, pow = 1, r
 
 SeqGSA = function(x, y, z.func, genesets, len, weighted = T, pow = 1, restand.first = F, restand.basis = "catalog", 
                 nrand = 1000, nperm = 1000, packages = c("edgeR"), funs = c("maxmean"), ncores = 8) {
-  s.set = wGSA_func(x, y, z.func, genesets, len, weighted, pow, restand.first, restand.basis, nrand)
+  s.set = SeqGSA_func(x, y, z.func, genesets, len, weighted, pow, restand.first, restand.basis, nrand)
   
   cl = makeCluster(ncores, type = "SOCK")
   registerDoSNOW(cl)
